@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/impressum', function () {
+    return view('legal.impressum');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+
+});
 
 require __DIR__.'/auth.php';
