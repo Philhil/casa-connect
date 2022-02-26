@@ -1,5 +1,5 @@
-<footer class="footer pt-8 position-sticky">
-    <div class="container">
+<footer class="footer pb-4">
+    <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
                 <div class="copyright text-center text-sm text-muted text-lg-left">
@@ -16,7 +16,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('impressum')}}" class="nav-link pe-0 text-muted"
-                           target="_blank">impressum</a>
+                            target="_blank">impressum</a>
                     </li>
                 </ul>
             </div>

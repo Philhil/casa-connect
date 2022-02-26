@@ -1,12 +1,16 @@
 <template>
 
   <ul class="list-group">
-    <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg " v-for="item in list" :key="item.id">
+    <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg " v-for="item in list"
+        :key="item.id">
       <div class="d-flex flex-column">
         <h6 class="mb-3 text-sm">{{ item.title }}</h6>
-        <span class="mb-2 text-xs">Provider: <span class="text-dark font-weight-bold ms-2">Vorname Nachname</span></span>
-        <span class="mb-2 text-xs">max Persons: <span class="text-dark ms-2 font-weight-bold">4</span></span>
-        <span class="mb-2 text-xs">providing till: <span class="text-dark ms-2 font-weight-bold">{{ item.offerEndsAt }}</span></span>
+        <span class="mb-2 text-xs">Provider: <span
+            class="text-dark font-weight-bold ms-2">Vorname Nachname</span></span>
+        <span class="mb-2 text-xs">max Persons: <span class="text-dark ms-2 font-weight-bold">{{item.amount}}</span></span>
+        <span class="mb-2 text-xs">providing till: <span class="text-dark ms-2 font-weight-bold">{{
+            item.offerEndsAt
+          }}</span></span>
         <span class="text-xs">Location: <span class="text-dark ms-2 font-weight-bold">{{ item.postcode }}</span></span>
       </div>
       <div class="ms-auto">
@@ -15,6 +19,7 @@
     </li>
     <infinite-loading :distance="1" @infinite="infiniteHandler"></infinite-loading>
   </ul>
+
 </template>
 
 <script>

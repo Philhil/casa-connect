@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('postcode');
             $table->string('county');
             $table->dateTimeTz('offerEndsAt');
+            $table->integer('amount');
             $table->text('title');
             $table->longText('description');
             $table->timestamps();

@@ -8956,6 +8956,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -43086,7 +43091,12 @@ var render = function () {
               _vm._v(" "),
               _vm._m(0, true),
               _vm._v(" "),
-              _vm._m(1, true),
+              _c("span", { staticClass: "mb-2 text-xs" }, [
+                _vm._v("max Persons: "),
+                _c("span", { staticClass: "text-dark ms-2 font-weight-bold" }, [
+                  _vm._v(_vm._s(item.amount)),
+                ]),
+              ]),
               _vm._v(" "),
               _c("span", { staticClass: "mb-2 text-xs" }, [
                 _vm._v("providing till: "),
@@ -43103,7 +43113,7 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(2, true),
+            _vm._m(1, true),
           ]
         )
       }),
@@ -43125,17 +43135,6 @@ var staticRenderFns = [
       _vm._v("Provider: "),
       _c("span", { staticClass: "text-dark font-weight-bold ms-2" }, [
         _vm._v("Vorname Nachname"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "mb-2 text-xs" }, [
-      _vm._v("max Persons: "),
-      _c("span", { staticClass: "text-dark ms-2 font-weight-bold" }, [
-        _vm._v("4"),
       ]),
     ])
   },

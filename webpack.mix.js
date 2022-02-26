@@ -17,6 +17,10 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('autoprefixer'),
 ])
     .vue({ version: 2 })
-    .copy('resources/css/default.css', 'public/css');
+    .copy('resources/css/default.css', 'public/css')
+    .copy(
+    'node_modules/@fortawesome/fontawesome-free/webfonts',
+    'public/webfonts'
+    );
 
 mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets', 'public/assets');

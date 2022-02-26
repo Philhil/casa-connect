@@ -27,7 +27,8 @@ class OfferFactory extends Factory
             'county' => $this->faker->country,
             'offerEndsAt' => Carbon::now()->addDays(rand(10, 500)),
             'title' => $this->faker->sentence,
-            'description' => $this->faker->text(rand(50,300))
+            'description' => $this->faker->text(rand(50,300)),
+            'amount' => $this->faker->numberBetween(1,10)
         ];
     }
 }

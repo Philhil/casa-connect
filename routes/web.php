@@ -31,7 +31,7 @@ use App\Http\Livewire\LaravelExamples\UserManagement;
 
 Route::get('/impressum', function () {
     return view('legal.impressum');
-});
+})->name('impressum');
 
 Route::get('/', function () {
     return view('welcome');

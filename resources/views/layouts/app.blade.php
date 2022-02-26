@@ -5,7 +5,7 @@
         @if (in_array(request()->route()->getName(),['sign-up'],))
             @include('layouts.navbars.guest.sign-up')
             {{ $slot }}
-            @include('layouts.footers.guest.with-socials')
+            @include('layouts.footers.guest.description')
             {{-- If the user is authenticated on the login page --}}
         @elseif (in_array(request()->route()->getName(),['sign-in', 'login'],))
             @include('layouts.navbars.guest.login')
@@ -17,7 +17,7 @@
                 @include('layouts.navbars.auth.nav-profile')
                 <div>
                     {{ $slot }}
-                    @include('layouts.footers.auth.footer')
+                    @include('layouts.footers.footer')
                 </div>
             </div>
         @else
@@ -27,7 +27,7 @@
             <main>
                 <div class="container-fluid">
                     <div class="row">
-                        @include('layouts.footers.auth.footer')
+                        @include('layouts.footers.footer')
                     </div>
                 </div>
             </main>
@@ -41,7 +41,7 @@
             @include('layouts.navbars.guest.login')
             {{ $slot }}
             <div class="mt-5">
-                @include('layouts.footers.guest.with-socials')
+                @include('layouts.footers.guest.description')
             </div>
 
             {{-- If the user is on the sign up page --}}
@@ -49,7 +49,7 @@
             <div>
                 @include('layouts.navbars.guest.sign-up')
                 {{ $slot }}
-                @include('layouts.footers.guest.with-socials')
+                @include('layouts.footers.guest.description')
             </div>
         @endif
     @endguest

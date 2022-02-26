@@ -742,14 +742,14 @@ select {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mt-3 {
+  margin-top: 0.75rem;
+}
 .mb-8 {
   margin-bottom: 2rem;
 }
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-.mt-3 {
-  margin-top: 0.75rem;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
