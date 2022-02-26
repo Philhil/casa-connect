@@ -14,7 +14,7 @@
         @elseif (in_array(request()->route()->getName(),['profile', 'my-profile'],))
             @include('layouts.navbars.auth.sidebar')
             <div class="main-content position-relative bg-gray-100">
-                @include('layouts.navbars.auth.nav-profile')
+                @include('layouts.navbars.auth.nav')
                 <div>
                     {{ $slot }}
                     @include('layouts.footers.footer')

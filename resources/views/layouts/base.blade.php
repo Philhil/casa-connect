@@ -58,6 +58,7 @@
     <body class="g-sidenav-show bg-gray-100">
 
     {{ $slot }}
+    @yield('content')
 
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>

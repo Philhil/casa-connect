@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Offer;
 use Livewire\Component;
 
-class CreateOffer extends Component
+class OfferCreate extends Component
 {
     public function render()
     {

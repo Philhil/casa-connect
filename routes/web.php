@@ -35,7 +35,7 @@ Route::get('/impressum', function () {
 
 Route::get('/', function () {
     return view('welcome');
-})->name('login');
+})->name('welcome');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
@@ -44,12 +44,13 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/createoffer', \App\Http\Livewire\CreateOffer::class)->name('createoffer');
-    Route::get('/myoffers', \App\Http\Livewire\CreateOffer::class)->name('myoffers');
-
-
 
     Route::get('/profile', Profile::class)->name('profile');
+
+    //offer
+    Route::get('/offer/create', \App\Http\Livewire\OfferCreate::class)->name('createoffer');
+    Route::post('/offer', [\App\Http\Controllers\OfferController::class, 'store'])->name('offer.store');
+    Route::get('/myoffers', \App\Http\Livewire\MyOffers::class)->name('myoffers');
 });
 
 require __DIR__.'/auth.php';

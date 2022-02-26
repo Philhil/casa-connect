@@ -5,7 +5,11 @@
                 <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                     <div class="card card-plain mt-8">
                         <div class="card-header pb-0 text-left bg-transparent">
-                            <h3 class="font-weight-bolder text-info text-gradient">{{ __('Welcome back') }}</h3>
+                            <h3 class="font-weight-bolder text-info text-gradient">{{ __('Welcome') }}</h3>
+
+                            @if (app('router')->getRoutes()->match(app('request')->create(app('url')->previous()))->getName() == "welcome")
+                                <p>please login or create a account before you can offer a save home</p>
+                            @endif
                         </div>
                         <div class="card-body">
                             <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">

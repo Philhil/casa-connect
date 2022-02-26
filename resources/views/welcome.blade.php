@@ -105,7 +105,7 @@
                                 </div>
 
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="docs" class="underline text-gray-900 dark:text-white">Search shelter</a>
+                                    <a href="/dashboard" class="underline text-gray-900 dark:text-white">Search shelter</a>
                                 </div>
                             </div>
 

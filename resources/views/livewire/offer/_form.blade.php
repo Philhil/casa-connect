@@ -27,33 +27,30 @@
                             data-bs-dismiss="alert" aria-label="Close">
                     </button>
                 </div>
-        @endif
+            @endif
 
-        <!--
 
-            $table->integer('amount');
-            $table->longText('description');
-                -->
-            <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
+            <form action="{{ route('offer.store') }}" method="POST" role="form text-left">
+                @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="title" class="form-control-label">{{ __('Titel') }}</label>
                             <div class="@error('title')border border-danger rounded-3 @enderror">
-                                <input wire:model="offer.title" class="form-control" type="text" placeholder="Titel"
-                                       id="title">
+                                <input class="form-control" type="text" placeholder="Title"
+                                       id="title" name="title" value="{{old("title")}}">
                             </div>
-                            @error('user.title')
+                            @error('title')
                             <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="offerEndsAt" class="form-control-label">{{ __('Verfügbar bis') }}</label>
-                            <div class="@error('user.offerEndsAt')border border-danger rounded-3 @enderror">
-                                <input wire:model="user.offerEndsAt" class="form-control" type="date" id="offerEndsAt">
+                            <div class="@error('offerEndsAt')border border-danger rounded-3 @enderror">
+                                <input class="form-control" type="date" id="offerEndsAt" name="offerEndsAt" value="{{old("offerEndsAt")}}">
                             </div>
-                            @error('user.offerEndsAt')
+                            @error('offerEndsAt')
                             <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
@@ -62,22 +59,21 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="postcode" class="form-control-label">{{ __('ZIP Code') }}</label>
-                            <div class="@error('user.postcode')border border-danger rounded-3 @enderror">
-                                <input wire:model="user.postcode" class="form-control" type="text" pattern="[0-9]{5}"
-                                       placeholder="70499" id="postcode">
+                            <div class="@error('postcode')border border-danger rounded-3 @enderror">
+                                <input class="form-control" type="text" pattern="[0-9]{5}"
+                                       placeholder="70499" id="postcode" name="postcode" value="{{old("postcode")}}">
                             </div>
-                            @error('user.phone')
+                            @error('postcode')
                             <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="country" class="form-control-label">{{ __('Country') }}</label>
-                            <div class="@error('user.country') border border-danger rounded-3 @enderror">
-                                <input wire:model="user.country" class="form-control" type="text"
-                                       placeholder="Germany" id="country">
+                            <div class="@error('country') border border-danger rounded-3 @enderror">
+                                <input class="form-control" type="text" placeholder="Germany" id="country" name="country" value="{{old("country")}}">
                             </div>
-                            @error('user.country')
+                            @error('country')
                             <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
@@ -86,11 +82,10 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="amount">{{ 'For how many Humans you can offer your Place?' }}</label>
-                            <div class="@error('user.description')border border-danger rounded-3 @enderror">
-                                <input wire:model="user.amount" class="form-control" type="number"
-                                       placeholder="1" id="amount">
+                            <div class="@error('amount')border border-danger rounded-3 @enderror">
+                                <input class="form-control" type="number" placeholder="1" id="amount" name="amount" value="{{old("amount")}}">
                             </div>
-                            @error('user.amount')
+                            @error('amount')
                             <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
@@ -98,11 +93,11 @@
                 </div>
                 <div class="form-group">
                     <label for="description">{{ 'Description' }}</label>
-                    <div class="@error('user.description')border border-danger rounded-3 @enderror">
-                            <textarea wire:model="user.description" class="form-control" id="description" rows="3"
-                                      placeholder="Discrype your offer in detail"></textarea>
+                    <div class="@error('description')border border-danger rounded-3 @enderror">
+                            <textarea class="form-control" id="description" rows="3" name="description"
+                                      placeholder="Discrype your offer in detail" value="{{old("description")}}"></textarea>
                     </div>
-                    @error('user.description')
+                    @error('description')
                     <div class="text-danger">{{ $message }}</div> @enderror
                 </div>
                 <div class="d-flex justify-content-end">
