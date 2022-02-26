@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Offertype::class)->nullable()->constrained();
+            $table->foreignIdFor(\App\Models\Offertype::class)->nullable()->constrained()->default(null);
             $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained();
             $table->string('postcode');
-            $table->string('county');
-            $table->dateTimeTz('offerEndsAt');
+            $table->string('country');
+            $table->dateTimeTz('offerEndsAt')->nullable()->default(null);
             $table->integer('amount');
             $table->text('title');
             $table->longText('description');
