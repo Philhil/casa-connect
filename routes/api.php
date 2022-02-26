@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/offer', function () {
+    $data = \App\Models\Offer::orderBy('id')->paginate(10);
+    return $data;
+});

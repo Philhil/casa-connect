@@ -26,6 +26,7 @@ class OfferFactory extends Factory
             'postcode' => $this->faker->postcode,
             'county' => $this->faker->country,
             'offerEndsAt' => Carbon::now()->addDays(rand(10, 500)),
+            'title' => $this->faker->sentence,
             'description' => $this->faker->text(rand(50,300))
         ];
     }

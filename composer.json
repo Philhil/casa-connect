@@ -11,9 +11,9 @@
                 "name": "creativetimofficial/vue-soft-ui-dashboard",
                 "version": "1.0.0",
                 "source": {
-                    "url": "https://github.com/creativetimofficial/vue-soft-ui-dashboard.git",
+                    "url": "https://github.com/creativetimofficial/soft-ui-dashboard-laravel.git",
                     "type": "git",
-                    "reference": "950f9ae"
+                    "reference": "798c7d0"
                 }
             }
         }
@@ -25,7 +25,9 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "livewire/livewire": "^2.4",
+        "symfony/http-kernel": "6.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

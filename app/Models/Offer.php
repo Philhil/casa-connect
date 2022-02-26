@@ -9,4 +9,5 @@ class Offer extends Model
 {
     use HasFactory;
 
+    protected $hidden = ['user_id', 'offertype_id', 'created_at', 'updated_at'];
 }

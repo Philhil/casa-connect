@@ -37,6 +37,10 @@
             <div class="max-w-6xl mx-auto sm:px-8 lg:px-10">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <h1>🇺🇦 Welcome Ukraine</h1>
+
+                </div>
+                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                    <small class="text-gray-800">The platform to match providers and affected humans.</small>
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
@@ -69,7 +73,7 @@
                                 </div>
 
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="docs" class="underline text-gray-900 dark:text-white">Offer a save home</a>
+                                    <a href="{{route('createoffer')}}" class="underline text-gray-900 dark:text-white">Offer a save home</a>
                                 </div>
                             </div>
 
