@@ -40,7 +40,7 @@
 
                 </div>
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <small class="text-gray-800">The platform to match providers and affected humans.</small>
+                    <small class="text-gray-800"><b>C</b>ome <b>A</b>nd <b>S</b>tay for <b>A</b> while - The platform to match providers and affected humans.</small>
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
