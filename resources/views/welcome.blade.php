@@ -26,6 +26,8 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/default.css')}}">
 
+        <link id="pagestyle" href="{{ asset('assets/css/soft-ui-dashboard.css?v=1') }}" rel="stylesheet" />
+
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
@@ -48,16 +50,25 @@
                 </div>
             @endif
 
+
+
             <div class="max-w-6xl mx-auto sm:px-8 lg:px-10">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+
+                @if(env('APP_DEBUG'))
+                    <div class="alert alert-danger" role="alert">
+                        This is not in production! E-Mail System not working.
+                    </div>
+                @endif
+
+                <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
                     <h1>🇺🇦 Welcome Ukraine</h1>
 
                 </div>
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
                     <small class="text-gray-800"><b>C</b>ome <b>A</b>nd <b>S</b>tay for <b>A</b> while - The platform to match providers and affected humans.</small>
                 </div>
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="mt-1 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">
@@ -158,5 +169,7 @@
                 </div>
             </div>
         </div>
+
+        <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
     </body>
 </html>
