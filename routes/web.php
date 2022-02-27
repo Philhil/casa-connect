@@ -7,15 +7,8 @@ use App\Http\Livewire\Auth\ResetPassword;
 use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
-use App\Http\Livewire\Billing;
 use App\Http\Livewire\Profile;
-use App\Http\Livewire\Tables;
-use App\Http\Livewire\StaticSignIn;
-use App\Http\Livewire\StaticSignUp;
-use App\Http\Livewire\Rtl;
 
-use App\Http\Livewire\LaravelExamples\UserProfile;
-use App\Http\Livewire\LaravelExamples\UserManagement;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,9 +43,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
 
     //offer
-    Route::get('/offer/create', \App\Http\Livewire\OfferCreate::class)->name('createoffer');
+    Route::get('/offercreate', \App\Http\Livewire\OfferCreate::class)->name('offer.create');
     Route::post('/offer', [\App\Http\Controllers\OfferController::class, 'store'])->name('offer.store');
     Route::get('/myoffers', \App\Http\Livewire\MyOffers::class)->name('myoffers');
+    Route::get('/offer/{offer}/remove', [\App\Http\Controllers\OfferController::class, 'destroy'])->name('offer.delete');
+    //Route::get('/offer/{offer}/edit', \App\Http\Livewire\OfferEdit::class)->name('offer.edit');
 });
 
 //axio Routes where auth is necessary

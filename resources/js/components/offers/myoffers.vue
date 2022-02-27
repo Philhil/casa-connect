@@ -10,6 +10,30 @@
         <span class="mb-2 text-xs">max Persons: <span class="text-dark ms-2 font-weight-bold">{{item.amount}}</span></span>
         <span class="mb-2 text-xs">providing till: <span class="text-dark ms-2 font-weight-bold">{{item.offerEndsAt}}</span></span>
         <span class="text-xs">Location: <span class="text-dark ms-2 font-weight-bold">{{ item.postcode }}</span></span>
+
+        <br>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <span>
+                <!--
+                <a v-bind:href="'/offer/'+ item.id + '/edit'" class="btn bg-gradient-primary btn-sm mb-0" type="button">
+                  <i class="fa fa-solid fa-pen"></i> edit
+                </a>
+                -->
+              </span>
+            </div>
+            <div class="col">
+              <span>
+                <a v-bind:href="'/offer/'+ item.id + '/remove'" class="btn bg-gradient-danger btn-sm mb-0" type="button">
+                  <i class="fa fa-solid fa-pen"></i> delete
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="ms-auto">
         <img src="https://via.placeholder.com/150"></img>

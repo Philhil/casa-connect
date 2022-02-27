@@ -9042,6 +9042,30 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -43361,9 +43385,36 @@ var render = function () {
                   _vm._v(_vm._s(item.postcode)),
                 ]),
               ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "container" }, [
+                _c("div", { staticClass: "row" }, [
+                  _vm._m(0, true),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col" }, [
+                    _c("span", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn bg-gradient-danger btn-sm mb-0",
+                          attrs: {
+                            href: "/offer/" + item.id + "/remove",
+                            type: "button",
+                          },
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-solid fa-pen" }),
+                          _vm._v(" delete\n              "),
+                        ]
+                      ),
+                    ]),
+                  ]),
+                ]),
+              ]),
             ]),
             _vm._v(" "),
-            _vm._m(0, true),
+            _vm._m(1, true),
           ]
         )
       }),
@@ -43377,6 +43428,12 @@ var render = function () {
   )
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [_c("span")])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

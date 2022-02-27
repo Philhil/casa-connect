@@ -87,7 +87,7 @@
                                 </div>
 
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{route('createoffer')}}" class="underline text-gray-900 dark:text-white">Offer a save home</a>
+                                    <a href="{{route('offer.create')}}" class="underline text-gray-900 dark:text-white">Offer a save home</a>
                                 </div>
                             </div>
 

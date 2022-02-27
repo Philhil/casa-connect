@@ -43,8 +43,8 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Offer</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'createoffer' ? 'active' : '' }}"
-                    href="{{ route('createoffer') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'offer.create' ? 'active' : '' }}"
+                    href="{{ route('offer.create') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg id="emoji"  viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">

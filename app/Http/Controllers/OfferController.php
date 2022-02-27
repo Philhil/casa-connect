@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Livewire\OfferShow;
+use App\Http\Requests\ContactOfferRequest;
 use App\Http\Requests\OfferRequest;
+use App\Mail\NewRequestOnOffer;
+use App\Mail\NewRequestOnOfferConfirmation;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class OfferController extends Controller
 {
@@ -88,11 +92,24 @@ class OfferController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $offer = Offer::with('user')->findOrFail($id);
+        if($offer->user->id === Auth::user()->id) {
+            $offer->delete();
+        }
+        return redirect(route('myoffers'));
     }
 
-    public function contact(Request $request)
+    public function contact(ContactOfferRequest $request)
     {
+        $offer = Offer::with('user')->findOrFail($request->offer_id);
+        //send Mail to offerer
+        Mail::to($offer->user->email)
+            ->queue(new NewRequestOnOffer($offer,$request->get('mail'), $request->get('name'), $request->get('message')));
 
+        //send Mail to requester
+        Mail::to($request->get('mail'))
+            ->queue(new NewRequestOnOfferConfirmation($offer, $request->get('name'), $request->get('message')));
+
+        return redirect('dashboard');
     }
 }

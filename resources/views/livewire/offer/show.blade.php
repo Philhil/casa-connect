@@ -62,15 +62,16 @@
                             <div class="mt-4">
                             <h6>{{ __('Contact') }}:</h6>
                             <form action="{{ route('offer.contact') }}" method="POST" role="form text-left">
+                                <input name="offer_id" type="hidden" value="{{$offer->id}}">
                                  <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name" class="form-control-label">{{ __('Name') }}</label>
-                                            <div class="@error('title')border border-danger rounded-3 @enderror">
+                                            <div class="@error('name')border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="name" placeholder="Name"
                                                        id="name" name="name" value="{{old("name")}}">
                                             </div>
-                                            @error('title')
+                                            @error('name')
                                             <div class="text-danger">{{ $message }}</div> @enderror
                                         </div>
                                     </div>
@@ -87,10 +88,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">{{ 'Message' }}</label>
+                                    <label for="message">{{ 'Message' }}</label>
                                     <div class="@error('message')border border-danger rounded-3 @enderror">
-                        <textarea class="form-control" id="description" rows="5" name="description"
-                                  placeholder="{{__('Write a nice text about yourself and your Situation, that the Host get an idea about you and want to offer his shelter')}}" value="{{old("message")}}"></textarea>
+                                        <textarea class="form-control" id="message" rows="5" name="message"
+                                                  placeholder="{{__('Write a nice text about yourself and your Situation, that the Host get an idea about you and want to offer his shelter')}}"
+                                                  >{{old("message")}}</textarea>
                                     </div>
                                     @error('message')
                                     <div class="text-danger">{{ $message }}</div> @enderror
