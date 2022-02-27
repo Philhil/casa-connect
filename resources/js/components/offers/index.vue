@@ -7,7 +7,8 @@
         <h6 class="mb-3 text-sm">{{ item.title }}</h6>
         <span class="mb-2 text-xs">Provider: <span
             class="text-dark font-weight-bold ms-2">{{ item.user.first_name }}</span></span>
-        <span class="mb-2 text-xs">max Persons: <span class="text-dark ms-2 font-weight-bold">{{item.amount}}</span></span>
+        <span class="mb-2 text-xs">max Persons: <span
+            class="text-dark ms-2 font-weight-bold">{{ item.amount }}</span></span>
         <span class="mb-2 text-xs">providing till: <span class="text-dark ms-2 font-weight-bold">{{
             item.offerEndsAt
           }}</span></span>
@@ -44,7 +45,7 @@ export default {
           page: this.page,
         },
       })
-          .then(({ data }) => {
+          .then(({data}) => {
             if (data.data.length) {
               this.page += 1;
               this.list.push(...data.data);

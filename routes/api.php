@@ -20,6 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/offer', function () {
-    $data = \App\Models\Offer::whereDate('offerEndsAt', '>', \Carbon\Carbon::now())->orderBy('id')->with('user')->paginate(10);
+    $data = \App\Models\Offer::where(function ($query) {
+        $query->whereDate('offerEndsAt', '>', \Carbon\Carbon::now())
+            ->orWhereNull('offerEndsAt');
+    })->with('user')->orderBy('offers.id')->paginate(10);
     return new \App\Http\Resources\OfferCollection($data);
 });

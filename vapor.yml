@@ -1,0 +1,40 @@
+id: 28838
+name: casa-connect
+environments:
+    production:
+        memory: 1024
+        cli-memory: 512
+        runtime: 'php-8.1:al2'
+        database: casa
+        domain: casa-connect.org
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+            - 'php artisan event:cache'
+            - 'npm ci && npm run prod && rm -rf node_modules'
+        firewall:
+            rate-limit: 1000
+            bot-control:
+                - CategoryAdvertising
+                - CategoryHttpLibrary
+                - CategoryLinkChecker
+                - CategoryScrapingFramework
+        deploy:
+            - 'php artisan migrate --force'
+    staging:
+        memory: 1024
+        cli-memory: 512
+        runtime: 'php-8.1:al2'
+        database: casa
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install'
+            - 'php artisan event:cache'
+            - 'npm ci && npm run dev && rm -rf node_modules'
+        firewall:
+            rate-limit: 1000
+            bot-control:
+                - CategoryAdvertising
+                - CategoryHttpLibrary
+                - CategoryLinkChecker
+                - CategoryScrapingFramework
+            deploy:
+                - 'php artisan migrate --force'
