@@ -9,7 +9,7 @@ class Dashboard extends Component
 {
     public function render()
     {
-        $total_offers = Offer::all()->count();
+        $total_offers = Offer::whereDate('offerEndsAt', '>', \Carbon\Carbon::now())->count();
         return view('livewire.dashboard', compact('total_offers'));
     }
 }

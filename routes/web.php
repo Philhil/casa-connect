@@ -42,15 +42,23 @@ Route::get('/login', Login::class)->name('login');
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
 Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+Route::get('/dashboard', Dashboard::class)->name('dashboard');
 
+Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
 
     //offer
     Route::get('/offer/create', \App\Http\Livewire\OfferCreate::class)->name('createoffer');
     Route::post('/offer', [\App\Http\Controllers\OfferController::class, 'store'])->name('offer.store');
     Route::get('/myoffers', \App\Http\Livewire\MyOffers::class)->name('myoffers');
+});
+
+//axio Routes where auth is necessary
+Route::middleware('auth')->group(function () {
+    Route::get('/api/myoffer', function (Request $request) {
+        $data = \App\Models\Offer::where('user_id', Auth::user()->id)->orderBy('id')->with('user')->paginate(10);
+        return $data->toJson();
+    });
 });
 
 require __DIR__.'/auth.php';

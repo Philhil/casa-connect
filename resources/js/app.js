@@ -13,6 +13,7 @@ window.$ = $;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('offer-list', require('./components/offers/index.vue').default);
+Vue.component('myoffer-list', require('./components/offers/myoffers').default);
 Vue.component('InfiniteLoading', require('vue-infinite-loading').default);
 
 Vue.use(require('vue-resource'));

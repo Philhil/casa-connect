@@ -8,6 +8,7 @@ class MyOffers extends Component
 {
     public function render()
     {
-        return view('livewire.offer.myoffers');
+        $url = '/api/myoffer';
+        return view('livewire.offer.myoffers', compact('url'));
     }
 }

@@ -37,9 +37,11 @@ class OfferController extends Controller
      */
     public function store(OfferRequest $request)
     {
-        $offer = new Offer($request->except('_token'));
-        $offer['user_id'] = Auth::user()->id;
-        $offer->save();
+        if (Auth::user()->offer()->count() <= 5) {
+            $offer = new Offer($request->except('_token'));
+            $offer['user_id'] = Auth::user()->id;
+            $offer->save();
+        }
         return redirect(route('myoffers'));
     }
 

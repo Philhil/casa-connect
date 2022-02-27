@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/offer', function () {
-    $data = \App\Models\Offer::orderBy('id')->paginate(10);
-    return $data;
+    $data = \App\Models\Offer::whereDate('offerEndsAt', '>', \Carbon\Carbon::now())->orderBy('id')->with('user')->paginate(10);
+    return new \App\Http\Resources\OfferCollection($data);
 });

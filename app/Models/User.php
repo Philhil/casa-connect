@@ -42,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the offers associated with the user.
+     */
+    public function offer()
+    {
+        return $this->hasMany(Offer::class);
+    }
 }

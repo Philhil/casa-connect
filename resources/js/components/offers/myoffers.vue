@@ -8,9 +8,7 @@
         <span class="mb-2 text-xs">Provider: <span
             class="text-dark font-weight-bold ms-2">{{ item.user.first_name }}</span></span>
         <span class="mb-2 text-xs">max Persons: <span class="text-dark ms-2 font-weight-bold">{{item.amount}}</span></span>
-        <span class="mb-2 text-xs">providing till: <span class="text-dark ms-2 font-weight-bold">{{
-            item.offerEndsAt
-          }}</span></span>
+        <span class="mb-2 text-xs">providing till: <span class="text-dark ms-2 font-weight-bold">{{item.offerEndsAt}}</span></span>
         <span class="text-xs">Location: <span class="text-dark ms-2 font-weight-bold">{{ item.postcode }}</span></span>
       </div>
       <div class="ms-auto">
@@ -33,20 +31,20 @@ export default {
   },
   methods: {
     infiniteHandler($state) {
-      axios.get('/api/offer', {
+      axios.get('/api/myoffer', {
         params: {
           page: this.page,
         },
       })
-          .then(({ data }) => {
-            if (data.data.length) {
-              this.page += 1;
-              this.list.push(...data.data);
-              $state.loaded();
-            } else {
-              $state.complete();
-            }
-          });
+      .then(({ data }) => {
+        if (data.data.length) {
+          this.page += 1;
+          this.list.push(...data.data);
+          $state.loaded();
+        } else {
+          $state.complete();
+        }
+      });
     },
   },
 }

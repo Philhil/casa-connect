@@ -51,6 +51,17 @@
                 {{ $slot }}
                 @include('layouts.footers.guest.description')
             </div>
+        {{-- If the user is on the dashboard page --}}
+        @elseif (!auth()->check() && in_array(request()->route()->getName(),['dashboard'],))
+
+            {{ $slot }}
+            <main>
+                <div class="container-fluid">
+                    <div class="row">
+                        @include('layouts.footers.guest.description')
+                    </div>
+                </div>
+            </main>
         @endif
     @endguest
 

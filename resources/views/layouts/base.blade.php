@@ -26,8 +26,8 @@
        <meta  property="og:site_name" content="Creative Tim" />
 -->
 
-
-        <link rel="icon" href="/favicon.ico" />
+<!--
+        <link rel="icon" href="/favicon.ico" /> -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
