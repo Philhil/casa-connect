@@ -6,25 +6,14 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
 
         <!-- Metas -->
-        <!--
-       <meta  name="description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
-       <meta  itemprop="name" content="Welcome Ukrain" />
-       <meta  itemprop="description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
-      <meta  itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
-       <meta  name="twitter:card" content="product" />
-       <meta  name="twitter:site" content="@creativetim" />
-       <meta  name="twitter:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
-       <meta  name="twitter:description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
-       <meta  name="twitter:creator" content="@creativetim" />
-       <meta  name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
-       <meta  property="fb:app_id" content="655968634437471" />
-       <meta  property="og:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
+       <meta  name="description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
+       <meta  itemprop="name" content="casa-connect" />
+       <meta  itemprop="description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
+       <meta  property="og:title" content="Come and Stay for A while." />
        <meta  property="og:type" content="article" />
-       <meta  property="og:url" content="https://www.creative-tim.com/live/vue-argon-dashboard-laravel" />
-       <meta  property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
-       <meta  property="og:description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
-       <meta  property="og:site_name" content="Creative Tim" />
--->
+       <meta  property="og:url" content="https://casa-connect.org" />
+       <meta  property="og:description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
+       <meta  property="og:site_name" content="casa-connect" />
 
 <!--
         <link rel="icon" href="/favicon.ico" /> -->

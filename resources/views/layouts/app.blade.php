@@ -52,7 +52,7 @@
                 @include('layouts.footers.guest.description')
             </div>
         {{-- If the user is on the dashboard page --}}
-        @elseif (!auth()->check() && in_array(request()->route()->getName(),['dashboard'],))
+        @else
 
             {{ $slot }}
             <main>

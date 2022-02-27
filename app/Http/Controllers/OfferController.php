@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\OfferShow;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
 use Illuminate\Http\Request;
@@ -88,5 +89,10 @@ class OfferController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function contact(Request $request)
+    {
+
     }
 }

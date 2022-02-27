@@ -24,7 +24,7 @@ class OfferFactory extends Factory
             'user_id' => User::all()->random()->id,
             'offertype_id' => Offertype::all()->random()->id,
             'postcode' => $this->faker->postcode,
-            'county' => $this->faker->country,
+            'country' => $this->faker->country,
             'offerEndsAt' => Carbon::now()->addDays(rand(10, 500)),
             'title' => $this->faker->sentence,
             'description' => $this->faker->text(rand(50,300)),

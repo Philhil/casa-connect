@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
 
-        <title>Laravel</title>
+        <!-- Metas -->
+        <meta  name="description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
+        <meta  itemprop="name" content="casa-connect" />
+        <meta  itemprop="description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
+        <meta  property="og:title" content="Come and Stay for A while." />
+        <meta  property="og:type" content="article" />
+        <meta  property="og:url" content="https://casa-connect.org" />
+        <meta  property="og:description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
+        <meta  property="og:site_name" content="casa-connect" />
+
+        <!--
+                <link rel="icon" href="/favicon.ico" /> -->
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">

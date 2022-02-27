@@ -43,6 +43,8 @@ Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-passwo
 Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
 
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
+Route::get('/offer/{offer}', \App\Http\Livewire\OfferShow::class)->name('offer.show');
+Route::post('/offer/contact', [\App\Http\Controllers\OfferController::class, 'contact'])->name('offer.contact');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
