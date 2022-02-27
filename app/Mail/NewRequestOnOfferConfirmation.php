@@ -35,7 +35,7 @@ class NewRequestOnOfferConfirmation extends Mailable
     public function build()
     {
         return $this
-            ->view('mail.offer_request_confirmation')
+            ->view('mail.offer_request_confirm')
             ->with([
                 'offer' => $this->offer,
                 'requester_name' => $this->requester_name,

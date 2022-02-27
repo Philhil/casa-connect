@@ -41,6 +41,8 @@
         <!-- Alpine -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+        {!! \Lunaweb\RecaptchaV3\Facades\RecaptchaV3::initJs() !!}
+
         @livewireStyles
     </head>
 

@@ -12,6 +12,12 @@
             item.offerEndsAt
           }}</span></span>
         <span class="text-xs">Location: <span class="text-dark ms-2 font-weight-bold">{{ item.postcode }}</span></span>
+
+        <span class="text-xs">
+        <a v-bind:href="'/offer/'+ item.id" class="btn bg-gradient-primary btn-sm mb-0" type="button">
+          <i class="fa fa-solid fa-eye"></i> show
+        </a>
+        </span>
       </div>
       <div class="ms-auto">
         <img src="https://via.placeholder.com/150"></img>

@@ -22,6 +22,7 @@
         "php": "^8.0.2",
         "creativetimofficial/vue-soft-ui-dashboard": "1.0.0",
         "guzzlehttp/guzzle": "^7.2",
+        "josiasmontag/laravel-recaptchav3": "^1.0",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",

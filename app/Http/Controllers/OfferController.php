@@ -102,6 +102,12 @@ class OfferController extends Controller
     public function contact(ContactOfferRequest $request)
     {
         $offer = Offer::with('user')->findOrFail($request->offer_id);
+
+        if ($request->get('zip') != "spamprevention" || !empty($request->get('street')))
+        {
+            return null;
+        }
+
         //send Mail to offerer
         Mail::to($offer->user->email)
             ->queue(new NewRequestOnOffer($offer,$request->get('mail'), $request->get('name'), $request->get('message')));
