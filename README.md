@@ -9,7 +9,7 @@
 
 ## About casa-connect.org
 
-<a href="casa-connect.org">casa-connect.org</a> is a Plattform where humans can offer places for fleeing people. The like the current situation in Ukrain 🇺🇦
+<a href="https://casa-connect.org">casa-connect.org</a> is a Plattform where humans can offer places for fleeing people. The like the current situation in Ukrain 🇺🇦
 
 
 ## Participate
