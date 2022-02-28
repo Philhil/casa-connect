@@ -54,17 +54,6 @@
 
             <div class="max-w-6xl mx-auto sm:px-8 lg:px-10">
 
-                @if(!env('APP_DEBUG'))
-                    <div class="alert alert-danger" role="alert">
-                        This is not in production! E-Mail System not working.
-                        Searching for support in getting this site running as fast as possible.
-
-                        Contact me at <a href="mailto:casa-connect@philhil.de">casa-connect@philhil.de</a>
-
-                        Github: <a href="https://github.com/Philhil/casa-connect">https://github.com/Philhil/casa-connect</a>
-                    </div>
-                @endif
-
                 <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
                     <h1>🇺🇦 Welcome Ukraine</h1>
 
@@ -146,6 +135,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-4 alert alert-danger" role="alert">
+                    Searching for support to improve this site as fast as possible.
+
+                    Contact me at <a href="mailto:develop@casa-connect.org">develop@casa-connect.org</a>
+
+                    Github: <a href="https://github.com/Philhil/casa-connect">https://github.com/Philhil/casa-connect</a>
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">

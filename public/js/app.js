@@ -8967,11 +8967,66 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       list: [],
-      page: 1
+      page: 1,
+      sort: '0',
+      infiniteId: 0,
+      filterCity: '',
+      filterAmount: 1,
+      filterAvailableTill: ''
     };
   },
   methods: {
@@ -8980,7 +9035,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       axios.get('/api/offer', {
         params: {
-          page: this.page
+          page: this.page,
+          filterCity: this.filterCity,
+          filterAmount: this.filterAmount,
+          filterAvailableTill: this.filterAvailableTill
         }
       }).then(function (_ref) {
         var data = _ref.data;
@@ -8997,6 +9055,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           $state.complete();
         }
       });
+    },
+    filterChanged: function filterChanged() {
+      //TODO: restart infiniteHandler
+      console.log('sort value:' + this.sort);
+      console.log('filterCity value:' + this.filterCity);
+      console.log('filterAmount value:' + this.filterAmount);
+      console.log('filterAvailableTill value:' + this.filterAvailableTill);
+      this.page = 1;
+      this.list = [];
+      console.log('Page:' + this.page); // as said in the documentation
+      // "The infinite loading component will
+      // reset itself whenever the identifier property has changed"
+
+      this.infiniteId += 1;
     }
   }
 });
@@ -43551,81 +43623,197 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "ul",
-    { staticClass: "list-group" },
-    [
-      _vm._l(_vm.list, function (item) {
-        return _c(
-          "li",
-          {
-            key: item.id,
-            staticClass:
-              "list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg ",
-          },
-          [
-            _c("div", { staticClass: "d-flex flex-column" }, [
-              _c("h6", { staticClass: "mb-3 text-sm" }, [
-                _vm._v(_vm._s(item.title)),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "mb-2 text-xs" }, [
-                _vm._v("Provider: "),
-                _c("span", { staticClass: "text-dark font-weight-bold ms-2" }, [
-                  _vm._v(_vm._s(item.user.first_name)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "mb-2 text-xs" }, [
-                _vm._v("max Persons: "),
-                _c("span", { staticClass: "text-dark ms-2 font-weight-bold" }, [
-                  _vm._v(_vm._s(item.amount)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "mb-2 text-xs" }, [
-                _vm._v("providing till: "),
-                _c("span", { staticClass: "text-dark ms-2 font-weight-bold" }, [
-                  _vm._v(_vm._s(item.offerEndsAt)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "text-xs" }, [
-                _vm._v("Location: "),
-                _c("span", { staticClass: "text-dark ms-2 font-weight-bold" }, [
-                  _vm._v(_vm._s(item.postcode)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "text-xs" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn bg-gradient-primary btn-sm mb-0",
-                    attrs: { href: "/offer/" + item.id, type: "button" },
-                  },
-                  [
-                    _c("i", { staticClass: "fa fa-solid fa-eye" }),
-                    _vm._v(" show\n      "),
-                  ]
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _vm._m(0, true),
-          ]
-        )
-      }),
+  return _c("div", { staticClass: "card" }, [
+    _c("div", { staticClass: "card-header pb-0" }, [
+      _c("h6", [_vm._v("Offers overview")]),
       _vm._v(" "),
-      _c("infinite-loading", {
-        attrs: { distance: 1 },
-        on: { infinite: _vm.infiniteHandler },
-      }),
-    ],
-    2
-  )
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 " }),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 " }, [
+          _c("span", [
+            _c(
+              "label",
+              {
+                staticClass: "form-control-label",
+                attrs: { for: "filterAmount" },
+              },
+              [_vm._v("Number of people:")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.filterAmount,
+                  expression: "filterAmount",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "number",
+                id: "filterAmount",
+                placeholder: "Minimum number of persons",
+                min: "1",
+                "aria-label": "filterAmount",
+                "aria-describedby": "Filter Minimum number of persons",
+              },
+              domProps: { value: _vm.filterAmount },
+              on: {
+                change: _vm.filterChanged,
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.filterAmount = $event.target.value
+                },
+              },
+            }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 " }, [
+          _c("span", [
+            _c(
+              "label",
+              {
+                staticClass: "form-control-label",
+                attrs: { for: "filterAvailableTill" },
+              },
+              [_vm._v("Available till:")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.filterAvailableTill,
+                  expression: "filterAvailableTill",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "date",
+                id: "filterAvailableTill",
+                placeholder: "Place is min available till",
+                "aria-label": "filterAvailableTill",
+                "aria-describedby": "Filter available till",
+              },
+              domProps: { value: _vm.filterAvailableTill },
+              on: {
+                change: _vm.filterChanged,
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.filterAvailableTill = $event.target.value
+                },
+              },
+            }),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card-body p-3" }, [
+      _c(
+        "ul",
+        { staticClass: "list-group" },
+        [
+          _vm._l(_vm.list, function (item) {
+            return _c(
+              "li",
+              {
+                key: item.id,
+                staticClass:
+                  "list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg ",
+              },
+              [
+                _c("div", { staticClass: "d-flex flex-column" }, [
+                  _c("h6", { staticClass: "mb-3 text-sm" }, [
+                    _vm._v(_vm._s(item.title)),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "mb-2 text-xs" }, [
+                    _vm._v("Provider: "),
+                    _c(
+                      "span",
+                      { staticClass: "text-dark font-weight-bold ms-2" },
+                      [_vm._v(_vm._s(item.user.first_name))]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "mb-2 text-xs" }, [
+                    _vm._v("max Persons: "),
+                    _c(
+                      "span",
+                      { staticClass: "text-dark ms-2 font-weight-bold" },
+                      [_vm._v(_vm._s(item.amount))]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "mb-2 text-xs" }, [
+                    _vm._v("providing till: "),
+                    _c(
+                      "span",
+                      { staticClass: "text-dark ms-2 font-weight-bold" },
+                      [_vm._v(_vm._s(item.offerEndsAt))]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-xs" }, [
+                    _vm._v("Location: "),
+                    _c(
+                      "span",
+                      { staticClass: "text-dark ms-2 font-weight-bold" },
+                      [_vm._v(_vm._s(item.postcode))]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-xs" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn bg-gradient-primary btn-sm mb-0",
+                        attrs: { href: "/offer/" + item.id, type: "button" },
+                      },
+                      [
+                        _c("i", { staticClass: "fa fa-solid fa-eye" }),
+                        _vm._v(" show\n      "),
+                      ]
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _vm._m(1, true),
+              ]
+            )
+          }),
+          _vm._v(" "),
+          _c("infinite-loading", {
+            attrs: { distance: 1, identifier: _vm.infiniteId },
+            on: { infinite: _vm.infiniteHandler },
+          }),
+        ],
+        2
+      ),
+    ]),
+  ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-sm" }, [
+      _c("i", { staticClass: "fa fa-arrow-down text-success" }),
+      _vm._v("\n    Filtering is improved soon.\n  "),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

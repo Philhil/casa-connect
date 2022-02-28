@@ -27,19 +27,8 @@
         </div>
         <div class="row mt-4">
             <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header pb-0">
-                        <h6>Offers overview</h6>
-                        <p class="text-sm">
-                            <i class="fa fa-arrow-up text-success"></i>
-                            some Filters
-                        </p>
-                    </div>
-                    <div class="card-body p-3">
-                        <div id="app">
-                            <offer-list></offer-list>
-                        </div>
-                    </div>
+                <div id="app">
+                    <offer-list></offer-list>
                 </div>
             </div>
         </div>
