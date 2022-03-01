@@ -7,7 +7,7 @@ Hi {{$offer->user->first_name}},
 <br><br>
 {{__('If your offer is no longer available, you can remove it by clicking here')}}: <a href="{{route('offer.delete', [$offer->id])}}">{{route('offer.delete', [$offer->id])}}</a>
 <br><br>
-{{__('The message from :name reads:', [$requester_name])}}
+{{__('The message from :name reads:', ['name' => $requester_name])}}
 <br>
 ---------------
 <br>

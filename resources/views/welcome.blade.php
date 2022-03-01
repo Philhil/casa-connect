@@ -55,8 +55,7 @@
 
                         </div>
                         <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
-                            <small class="text-gray-800"><b>C</b>ome <b>A</b>nd <b>S</b>tay for <b>A</b> while - The
-                                platform to match providers and affected humans.</small>
+                            <small class="text-gray-800"><b>C</b>ome <b>A</b>nd <b>S</b>tay for <b>A</b> while - {{__('The platform to match providers and affected humans.')}}</small>
                         </div>
 
                         <div class="mt-1 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
@@ -122,13 +121,13 @@
 
                                         <div class="ml-4 text-lg leading-7 font-semibold">
                                             <a href="{{route('offer.create')}}"
-                                               class="underline text-gray-900 dark:text-white">Offer a save home</a>
+                                               class="underline text-gray-900 dark:text-white">{{__('Offer a save home')}}</a>
                                         </div>
                                     </div>
 
                                     <div class="ml-12">
                                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                            Here you can offer a accommodation.
+                                            {{__('Here you can offer a accommodation.')}}
                                         </div>
                                     </div>
                                 </div>
@@ -176,14 +175,13 @@
                                         </div>
 
                                         <div class="ml-4 text-lg leading-7 font-semibold">
-                                            <a href="/dashboard" class="underline text-gray-900 dark:text-white">Search
-                                                shelter</a>
+                                            <a href="/dashboard" class="underline text-gray-900 dark:text-white">{{__('Search shelter')}}</a>
                                         </div>
                                     </div>
 
                                     <div class="ml-12">
                                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                            You need a save place? Here you can find a shelter.
+                                            {{__('You need a save place? Here you can find a shelter.')}}
                                         </div>
                                     </div>
                                 </div>
@@ -191,10 +189,8 @@
                         </div>
 
                         <div class="mt-4 alert alert-danger" role="alert">
-                            Searching for support to improve this site as fast as possible.
-
-                            Contact me at <a href="mailto:develop@casa-connect.org">develop@casa-connect.org</a>
-
+                            {{__('Searching for support to improve this site as fast as possible.')}}
+                            {{__('Contact me at')}} <a href="mailto:develop@casa-connect.org">develop@casa-connect.org</a>
                             Github: <a href="https://github.com/Philhil/casa-connect">https://github.com/Philhil/casa-connect</a>
                         </div>
 
