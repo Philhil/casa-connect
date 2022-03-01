@@ -21,6 +21,7 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     .copy(
     'node_modules/@fortawesome/fontawesome-free/webfonts',
     'public/webfonts'
-    );
+    )
+    .copy('resources/img', 'public/img');
 
 mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets', 'public/assets');
