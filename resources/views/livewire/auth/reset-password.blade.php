@@ -16,7 +16,7 @@
                                     <label for="email">{{ __('Email') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror mb-3">
                                         <input wire:model="email" id="email" type="email" class="form-control"
-                                            placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                            placeholder="{{__('Email')}}" aria-label="Email" aria-describedby="email-addon">
                                     </div>
                                     @error('email') <div class="text-danger">{{ $message }}</div> @enderror
                                 </div>
@@ -34,7 +34,7 @@
                                     <div
                                         class="@error('passwordConfirmation')border border-danger rounded-3 @enderror mb-3">
                                         <input wire:model="passwordConfirmation" id="password" type="password"
-                                            class="form-control" placeholder="passwordConfirmation"
+                                            class="form-control" placeholder="{{__('passwordConfirmation')}}"
                                             aria-label="Password" aria-describedby="password-addon">
                                     </div>
                                     @error('passwordConfirmation') <div class="text-danger">{{ $message }}</div>

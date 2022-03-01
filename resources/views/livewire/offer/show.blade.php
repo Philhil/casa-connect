@@ -7,7 +7,7 @@
 
                 </div>
 
-                <a class="btn btn-info btn-fill btn-round" href="{{ route('dashboard') }}"> <i class="fa fa-arrow-left"></i> {{ 'back to overwiew' }} </a>
+                <a class="btn btn-info btn-fill btn-round" href="{{ route('dashboard') }}"> <i class="fa fa-arrow-left"></i> {{ __('back to overview') }} </a>
 
                 <div>
                     <div class="card">
@@ -44,10 +44,10 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="row">
-                                            <span>Location: {{$offer->postcode}}</span>
+                                            <span>{{__('Location:')}} {{$offer->postcode}}</span>
                                         </div>
                                         <div class="row mt-2">
-                                            <b>{{ __('Description') }}:</b>
+                                            <b>{{ __('Description:') }}</b>
                                             <p>
                                                 {{$offer->description}}
                                             </p>
@@ -68,7 +68,7 @@
                                         <div class="form-group">
                                             <label for="name" class="form-control-label">{{ __('Name') }}</label>
                                             <div class="@error('name')border border-danger rounded-3 @enderror">
-                                                <input class="form-control" type="name" placeholder="Name"
+                                                <input class="form-control" type="name" placeholder="{{__('Name')}}"
                                                        id="name" name="name" value="{{old("name")}}">
                                             </div>
                                             @error('name')

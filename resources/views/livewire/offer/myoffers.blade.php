@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h6>You'r offers</h6>
+                        <h6>{{__('You\'r offers')}}</h6>
                     </div>
                     <div class="card-body p-3">
                         <div id="app">

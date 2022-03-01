@@ -22,7 +22,7 @@
                             <div class="mb-3">
                                 <div class="@error('first_name') border border-danger rounded-3  @enderror">
                                     <input wire:model="first_name" type="text" class="form-control"
-                                           placeholder="First Name"
+                                           placeholder="{{__('First Name')}}"
                                            aria-label="Name" aria-describedby="email-addon">
                                 </div>
                                 @error('first_name')
@@ -30,7 +30,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="@error('name') border border-danger rounded-3  @enderror">
-                                    <input wire:model="name" type="text" class="form-control" placeholder="Name"
+                                    <input wire:model="name" type="text" class="form-control" placeholder="{{__('Name')}}"
                                            aria-label="Name" aria-describedby="email-addon">
                                 </div>
                                 @error('name')
@@ -38,7 +38,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="@error('email') border border-danger rounded-3 @enderror">
-                                    <input wire:model="email" type="email" class="form-control" placeholder="Email"
+                                    <input wire:model="email" type="email" class="form-control" placeholder="{{__('Email')}}"
                                            aria-label="Email" aria-describedby="email-addon">
                                 </div>
                                 @error('email')

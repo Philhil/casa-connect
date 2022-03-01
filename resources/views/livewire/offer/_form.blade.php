@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label for="title" class="form-control-label">{{ __('Titel') }}</label>
                 <div class="@error('title')border border-danger rounded-3 @enderror">
-                    <input class="form-control" type="text" placeholder="Title"
+                    <input class="form-control" type="text" placeholder="{{__('Title')}}"
                            id="title" name="title" value="{{old("title")}}">
                 </div>
                 @error('title')
@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label for="country" class="form-control-label">{{ __('Country') }}</label>
                 <div class="@error('country') border border-danger rounded-3 @enderror">
-                    <input class="form-control" type="text" placeholder="Germany" id="country" name="country"
+                    <input class="form-control" type="text" placeholder="{{__('Germany')}}" id="country" name="country"
                            value="{{old("country")}}">
                 </div>
                 @error('country')
@@ -66,13 +66,13 @@
         <label for="description">{{ 'Description' }}</label>
         <div class="@error('description')border border-danger rounded-3 @enderror">
                             <textarea class="form-control" id="description" rows="3" name="description"
-                                      placeholder="Discrype your offer in detail"
+                                      placeholder="{{__('Discrype your offer in detail')}}"
                                       value="{{old("description")}}"></textarea>
         </div>
         @error('description')
         <div class="text-danger">{{ $message }}</div> @enderror
     </div>
     <div class="d-flex justify-content-end">
-        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Create my kindly offer' }}</button>
+        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ __('Create my kindly offer') }}</button>
     </div>
 </form>

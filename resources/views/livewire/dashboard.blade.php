@@ -8,7 +8,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Total offers</p>
+                                    <p class="text-sm mb-0 text-capitalize font-weight-bold">{{__('Total offers')}}</p>
                                     <h5 class="font-weight-bolder mb-0">
                                         {{$total_offers}}
                                     </h5>
