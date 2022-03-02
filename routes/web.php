@@ -26,6 +26,10 @@ Route::get('/impressum', function () {
     return view('legal.impressum');
 })->name('impressum');
 
+Route::get('/datenschutz', function () {
+    return view('legal.datenschutz');
+})->name('datenschutz');
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
