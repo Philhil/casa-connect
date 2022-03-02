@@ -15,8 +15,7 @@
        <meta  property="og:description" content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people" />
        <meta  property="og:site_name" content="casa-connect" />
 
-<!--
-        <link rel="icon" href="/favicon.ico" /> -->
+        <link rel="icon" href="{{asset('favicon.ico')}}" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>

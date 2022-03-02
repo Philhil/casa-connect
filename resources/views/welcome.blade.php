@@ -18,13 +18,15 @@
           content="Come and Stay for A while. The platform to match providers and affected humans. Mediation of accommodation to fleeing ukrainian people"/>
     <meta property="og:site_name" content="casa-connect"/>
 
-    <!--
-            <link rel="icon" href="/favicon.ico" /> -->
+    <link rel="icon" href="{{asset('favicon.ico')}}" />
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
@@ -58,9 +60,10 @@
                             <small class="text-gray-800"><b>C</b>ome <b>A</b>nd <b>S</b>tay for <b>A</b> while - {{__('The platform to match providers and affected humans.')}}</small>
                         </div>
 
-                        <div class="mt-1 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <div class="p-6">
+                        <div class="row mt-4 h-30 p-3" style="margin: 0; padding: 0;">
+                            <div class="col-sm-12 col-md-6" style="margin: 0; padding: 2px;">
+                                <form action="{{route('offer.create')}}" style="width: 100%; height: 100%">
+                                <button style="width: 100%; height: 100%" type="submit" class="btn  bg-gradient-faded-success btn-circle btn-xl">
                                     <div class="flex items-center">
                                         <div class="w-8 h-8 text-gray-500">
                                             <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
@@ -121,80 +124,88 @@
 
                                         <div class="ml-4 text-lg leading-7 font-semibold">
                                             <a href="{{route('offer.create')}}"
-                                               class="underline text-gray-900 dark:text-white">{{__('Offer a save home')}}</a>
+                                               class="underline text-gray-900">{{__('Offer a save home')}}</a>
                                         </div>
                                     </div>
 
-                                    <div class="ml-12">
-                                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                            {{__('Here you can offer a accommodation.')}}
-                                        </div>
+                                    <div class="mt-2 text-gray-600 text-sm">
+                                        {{__('Here you can offer a accommodation.')}}
                                     </div>
-                                </div>
+                                </button>
+                                </form>
+                            </div>
+                            <div class="col-sm-12 col-md-6" style="margin: 0; padding: 2px;">
+                                <form action="{{route('dashboard')}}" style="width: 100%; height: 100%">
+                                    <button style="width: 100%; height: 100%" type="submit" class="btn bg-gradient-faded-info btn-circle btn-xl">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 text-gray-500">
+                                                <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+                                                    <g id="line">
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M44.0447,53.3654l.9629,4.2419"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M27.5069,52.3557l-.9629,5.2516"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M44.0447,53.3654l.9629,4.2419"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M27.5069,52.3557l-.9629,5.2516"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M42.4083,47.855h0"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M31.9885,45.0752H37.363c2.7606,0,4.3909.8926,5.0453,2.78"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M23.9418,35.9037v1.7a9.5391,9.5391,0,0,0,5.2783,8.98c1.5335.6681,2.3676,1.3319,2.3676,2.8875A2.6368,2.6368,0,0,1,28.7754,52.03c-5.1552,0-11.4429-6.4679-11.4429-15.14,0-8.8036,5.3449-11.6923,8.0955-11.6923h7.0138a5.1725,5.1725,0,0,1,5.1472,4.9914v1.423"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M47.7707,38.3017v.69a9.539,9.539,0,0,1-5.2784,8.98c-1.5335.6681-2.3675,1.3319-2.3675,2.8875a2.607,2.607,0,0,0,2.8122,2.5583c5.1552,0,11.4429-6.4679,11.4429-15.14,0-8.2189-5.3448-11.0192-8.0955-11.0192H40.28"/>
+                                                        <circle cx="29.5155" cy="18.1951" r="3.5434" fill="none"
+                                                                stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"/>
+                                                        <circle cx="35.2544" cy="38.6475" r="3.5434" fill="none"
+                                                                stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"/>
+                                                        <circle cx="42.7382" cy="20.0538" r="3.5434" fill="none"
+                                                                stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"/>
+                                                    </g>
+                                                </svg>
+                                            </div>
 
-                                <div class="p-6">
-                                    <div class="flex items-center">
-                                        <div class="w-8 h-8 text-gray-500">
-                                            <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="line">
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M44.0447,53.3654l.9629,4.2419"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M27.5069,52.3557l-.9629,5.2516"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M44.0447,53.3654l.9629,4.2419"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M27.5069,52.3557l-.9629,5.2516"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M42.4083,47.855h0"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M31.9885,45.0752H37.363c2.7606,0,4.3909.8926,5.0453,2.78"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M23.9418,35.9037v1.7a9.5391,9.5391,0,0,0,5.2783,8.98c1.5335.6681,2.3676,1.3319,2.3676,2.8875A2.6368,2.6368,0,0,1,28.7754,52.03c-5.1552,0-11.4429-6.4679-11.4429-15.14,0-8.8036,5.3449-11.6923,8.0955-11.6923h7.0138a5.1725,5.1725,0,0,1,5.1472,4.9914v1.423"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M47.7707,38.3017v.69a9.539,9.539,0,0,1-5.2784,8.98c-1.5335.6681-2.3675,1.3319-2.3675,2.8875a2.607,2.607,0,0,0,2.8122,2.5583c5.1552,0,11.4429-6.4679,11.4429-15.14,0-8.2189-5.3448-11.0192-8.0955-11.0192H40.28"/>
-                                                    <circle cx="29.5155" cy="18.1951" r="3.5434" fill="none"
-                                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"/>
-                                                    <circle cx="35.2544" cy="38.6475" r="3.5434" fill="none"
-                                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"/>
-                                                    <circle cx="42.7382" cy="20.0538" r="3.5434" fill="none"
-                                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"/>
-                                                </g>
-                                            </svg>
+                                            <div class="ml-4 text-lg leading-7 font-semibold">
+                                                <a href="{{route('dashboard')}}" class="underline text-gray-900">{{__('Search shelter')}}</a>
+                                            </div>
                                         </div>
 
-                                        <div class="ml-4 text-lg leading-7 font-semibold">
-                                            <a href="/dashboard" class="underline text-gray-900 dark:text-white">{{__('Search shelter')}}</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="ml-12">
-                                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                        <div class="mt-2 text-gray-600 text-sm">
                                             {{__('You need a save place? Here you can find a shelter.')}}
                                         </div>
-                                    </div>
-                                </div>
+                                    </button>
+                                </form>
                             </div>
                         </div>
 
+
+
+                        @if(false)
                         <div class="mt-4 alert alert-danger" role="alert">
                             {{__('Searching for support to improve this site as fast as possible.')}}
                             {{__('Contact me at')}} <a href="mailto:develop@casa-connect.org">develop@casa-connect.org</a>
                             Github: <a href="https://github.com/Philhil/casa-connect">https://github.com/Philhil/casa-connect</a>
                         </div>
+                        @endif
 
                         <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                            <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+                                <a href="https://github.com/Philhil/casa-connect" class="ml-1 underline"><i class="fa fa-brands fa-github"></i> Github</a>
+                            </div>
+
                             @if(env('APP_DEBUG'))
                                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                                     Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
