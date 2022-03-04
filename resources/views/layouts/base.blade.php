@@ -39,16 +39,15 @@
         <link id="pagestyle" href="{{ asset('assets/css/soft-ui-dashboard.css?v=1') }}" rel="stylesheet" />
         <!-- Alpine -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
-        {!! \Lunaweb\RecaptchaV3\Facades\RecaptchaV3::initJs() !!}
+        @yield('head')
 
         @livewireStyles
     </head>
 
     <body class="g-sidenav-show bg-gray-100">
 
-    {{ $slot }}
     @yield('content')
+    {{ $slot }}
 
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>

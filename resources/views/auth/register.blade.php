@@ -1,66 +1,92 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.app')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- First Name -->
-            <div class="mt-4">
-                <x-label for="first_name" :value="__('First Name')" />
-
-                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
+<section class="h-100-vh mb-8">
+    <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
+         style="background-image: url({{asset('assets/img/curved-images/curved14.jpg')}});">
+        <span class="mask bg-gradient-dark opacity-6"></span>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 text-center mx-auto">
+                    <h1 class="text-white mb-2 mt-5">{{ __('Welcome!') }}</h1>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-lg-n10 mt-md-n11 mt-n10">
+            <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+                <div class="card z-index-0">
+                    <div class="card-header text-center pt-4">
+                        <h5>{{ __('Register') }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('register') }}" role="form text-left">
+                            @csrf
 
-            <!-- Name -->
-            <div class="mt-4">
-                <x-label for="name" :value="__('Name')" />
+                            <div class="row mb-3">
+                                <div class="@error('first_name') border border-danger rounded-3  @enderror">
+                                    <input name="first_name" type="text" class="form-control"
+                                           placeholder="{{__('First Name')}}"
+                                           aria-label="Name" aria-describedby="email-addon"
+                                           value="{{ old('first_name') }}" required autocomplete="name" autofocus>
+                                </div>
+                                @error('first_name')<div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                            <div class="row mb-3">
+                                <div class="@error('name') border border-danger rounded-3  @enderror">
+                                    <input name="name" type="text" class="form-control" placeholder="{{__('Name')}}"
+                                           aria-label="Name" aria-describedby="email-addon"
+                                           value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                </div>
+                                @error('name')<div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="@error('email') border border-danger rounded-3 @enderror">
+                                    <input name="email" type="email" class="form-control" placeholder="{{__('Email')}}"
+                                           aria-label="Email" aria-describedby="email-addon"
+                                           value="{{ old('email') }}" required autocomplete="email">
+                                </div>
+                                @error('email')<div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="@error('password') border border-danger rounded-3 @enderror">
+                                    <input name="password" type="password" class="form-control"
+                                           placeholder="Password" aria-label="Password"
+                                           aria-describedby="password-addon"
+                                           required autocomplete="new-password">
+                                </div>
+                                @error('password')<div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+
+                            <input name="zip" type="text" name="zip" style="display: none;" value="spamprevention">
+                            <input name="street" type="text" name="street" style="display: none;" value="">
+
+                            {!! RecaptchaV3::initJs() !!}
+                            {!! RecaptchaV3::field('register') !!}
+
+                            @error('g-recaptcha-response')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+
+                            <div class="row mb-0">
+                                <div class="text-center">
+                                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" data-action='submit'>
+                                        {{__('Sign up')}}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p class="text-sm mt-3 mb-0">{{ __('Already have an account? ') }}<a
+                                        href="{{ route('login') }}"
+                                        class="text-dark font-weight-bolder">{{ __('Sign in') }}</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+</section>

@@ -20,10 +20,20 @@
                     @include('layouts.footers.footer')
                 </div>
             </div>
-        @else
+        @elseif(isset($slot))
             @include('layouts.navbars.auth.sidebar')
             @include('layouts.navbars.auth.nav')
             {{ $slot }}
+            <main>
+                <div class="container-fluid">
+                    <div class="row">
+                        @include('layouts.footers.footer')
+                    </div>
+                </div>
+            </main>
+        @else
+            @include('layouts.navbars.auth.sidebar')
+            @include('layouts.navbars.auth.nav')
             <main>
                 <div class="container-fluid">
                     <div class="row">
@@ -36,25 +46,17 @@
 
     {{-- If the user is not authenticated (if the user is a guest) --}}
     @guest
-        {{-- If the user is on the login page --}}
-        @if (!auth()->check() && in_array(request()->route()->getName(),['login'],))
-            @include('layouts.navbars.guest.login')
-            {{ $slot }}
-            <div class="mt-5">
-                @include('layouts.footers.guest.description')
-            </div>
-
-            {{-- If the user is on the sign up page --}}
-        @elseif (!auth()->check() && in_array(request()->route()->getName(),['sign-up'],))
-            <div>
-                @include('layouts.navbars.guest.sign-up')
-                {{ $slot }}
-                @include('layouts.footers.guest.description')
-            </div>
         {{-- If the user is on the dashboard page --}}
-        @else
-
+        @if (isset($slot))
             {{ $slot }}
+            <main>
+                <div class="container-fluid">
+                    <div class="row">
+                        @include('layouts.footers.guest.description')
+                    </div>
+                </div>
+            </main>
+        @else
             <main>
                 <div class="container-fluid">
                     <div class="row">
