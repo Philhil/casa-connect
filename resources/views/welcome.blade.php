@@ -53,7 +53,7 @@
                     <div class="max-w-6xl mx-auto sm:px-8 lg:px-10">
 
                         <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
-                            <h1>🇺🇦 Welcome Ukraine</h1>
+                            <h1><span class="flag-icon flag-icon-ua"></span> Welcome Ukraine</h1>
 
                         </div>
                         <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
