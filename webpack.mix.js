@@ -19,7 +19,8 @@ mix.js('resources/js/app.js', 'public/js')
         require('autoprefixer'),
     ])
     .vue({ version: 2 })
-    .copy('resources/img', 'public/img');
+    .copy('resources/img', 'public/img')
+    .copy('resources/img/logo/favicon.ico', 'public/favicon.ico');
 
 mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets/css', 'public/assets/css');
 mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets/fonts', 'public/assets/fonts');
