@@ -10,8 +10,15 @@
                             <h3 class="font-weight-bolder text-info text-gradient">{{ __('Welcome') }}</h3>
 
                             @if (app('router')->getRoutes()->match(app('request')->create(app('url')->previous()))->getName() == "welcome")
-                                <p>{{__('please login or create a account before you can offer a save home')}}</p>
+                                <p>{{__('please login or create a account before you can offer a save home')}}.</p>
                             @endif
+
+                            <p class="mb-4 text-xl mx-auto">
+                                {{ __('You are new?') }}
+
+                                    <a href="{{ route('register') }}"
+                                       class="text-info text-gradient font-weight-bold">{{ __('Create a account') }}</a>
+                            </p>
                         </div>
                         <div class="card-body">
 
@@ -64,12 +71,6 @@
                                             href="{{ route('password.request') }}"
                                             class="text-info text-gradient font-weight-bold">{{ __('here') }}</a></small>
                             @endif
-
-                            <p class="mb-4 text-sm mx-auto">
-                                {{ __(' Don\'t have an account?') }}
-                                <a href="{{ route('register') }}"
-                                   class="text-info text-gradient font-weight-bold">{{ __('Sign up') }}</a>
-                            </p>
                         </div>
                     </div>
                 </div>
