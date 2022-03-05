@@ -245,8 +245,7 @@
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
 <script>
     (function () {
-        const div = document.querySelector('.background-welcomepage'),
-            html = document.documentElement; // A reference to <html> element
+        const div = document.querySelector('.background-welcomepage');
         div.style.setProperty('--bg-desktop', `url({{ asset('img/bg/pexels-engin-akyurt-1451040.jpg') }})`);
         div.style.setProperty('--bg-mobile', `url({{ asset('img/bg/pexels-engin-akyurt-1486844.jpg') }})`);
     }());

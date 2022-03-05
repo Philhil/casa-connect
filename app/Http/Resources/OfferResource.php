@@ -21,6 +21,7 @@ class OfferResource extends JsonResource
             'offerEndsAt' => $this->offerEndsAt,
             'postcode' => $this->postcode,
             'user' => new UserResource($this->user),
+            'description' => substr($this->description, 0, 100) . " ..."
         ];
     }
 }
