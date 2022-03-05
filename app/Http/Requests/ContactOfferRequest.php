@@ -28,7 +28,7 @@ class ContactOfferRequest extends FormRequest
             'mail' => 'required|email:rfc,dns',
             'message' => 'required',
             'offer_id' => 'required|exists:offers,id',
-            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
+            'g-recaptcha-response' => 'required|recaptchav3:offerrequest,0.5'
         ];
     }
 }

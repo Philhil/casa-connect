@@ -101,16 +101,12 @@
                                 <input type="text" name="zip" style="display: none;" value="spamprevention">
                                 <input type="text" name="street" style="display: none;" value="">
 
-                                <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                                    <div class="col-md-6">
-                                        {!! \Lunaweb\RecaptchaV3\Facades\RecaptchaV3::field('register') !!}
-                                        @if ($errors->has('g-recaptcha-response'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                    </span>
-                                        @endif
-                                    </div>
-                                </div>
+                                {!! RecaptchaV3::initJs() !!}
+                                {!! RecaptchaV3::field('offerrequest') !!}
+
+                                @error('g-recaptcha-response')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
 
                                 <div class="d-flex justify-content-end">
                                     <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Send Massage' }}</button>
