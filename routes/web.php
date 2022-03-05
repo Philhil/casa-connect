@@ -55,6 +55,10 @@ Route::get('google-v3-recaptcha', [GoogleV3CaptchaController::class, 'index']);
 Route::post('validate-g-recaptcha', [GoogleV3CaptchaController::class, 'validateGCaptch']);
 //Recaptcha end
 
+//Language start
+Route::get('lang/{lang}', [\App\Http\Controllers\LanguageController::class, 'switchLang'])->name('lang.switch');
+//Language end
+
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
 Route::get('/offer/{offer}', \App\Http\Livewire\OfferShow::class)->name('offer.show');
 Route::post('/offer/contact', [\App\Http\Controllers\OfferController::class, 'contact'])->name('offer.contact');

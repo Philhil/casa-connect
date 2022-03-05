@@ -10,7 +10,7 @@
                             <h3 class="font-weight-bolder text-info text-gradient">{{ __('Welcome') }}</h3>
 
                             @if (app('router')->getRoutes()->match(app('request')->create(app('url')->previous()))->getName() == "welcome")
-                                <p>{{__('please login or create a account before you can offer a save home')}}.</p>
+                                <p>{{__('please login or create a account before you can offer a save home.')}}</p>
                             @endif
 
                             <p class="mb-4 text-xl mx-auto">

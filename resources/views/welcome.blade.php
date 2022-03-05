@@ -37,9 +37,9 @@
 
 <img class="background-welcomepage">
 
-<div class="container-fluid py-4 pt-5">
+@include('layouts.navbars.nav')
+<div class="container-fluid">
     <div class="row">
-
         <div class="col-lg-2 col-sm-1"></div>
         <div class="col-lg-8 col-sm-10">
             <div class="card bg-gray-150" style="opacity: 95%" >
@@ -58,75 +58,75 @@
                         <div class="row mt-4 h-30 p-3" style="margin: 0; padding: 0;">
                             <div class="col-sm-12 col-md-6" style="margin: 0; padding: 2px;">
                                 <form action="{{route('offer.create')}}" style="width: 100%; height: 100%">
-                                <button style="width: 100%; height: 100%" type="submit" class="btn  bg-gradient-faded-success btn-circle btn-xl">
-                                    <div class="flex items-center">
-                                        <div class="w-8 h-8 text-gray-500">
-                                            <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="line">
-                                                    <line x1="60.0633" x2="60.0633" y1="61.4636" y2="20.1288"
-                                                          fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"/>
-                                                    <line x1="35.7945" x2="63.8" y1="9.2474" y2="28.0984" fill="none"
-                                                          stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="2"/>
-                                                    <line x1="11.4616" x2="11.4616" y1="61.4636" y2="20.1288"
-                                                          fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"/>
-                                                    <polyline fill="none" stroke="#000" stroke-linecap="round"
-                                                              stroke-linejoin="round" stroke-width="2"
-                                                              points="17.329 61.464 17.329 32.857 35.737 20.438 35.788 20.438 54.196 32.857 54.196 61.464"/>
-                                                    <line x1="35.7304" x2="7.7249" y1="9.2474" y2="28.0984" fill="none"
-                                                          stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                          stroke-width="2"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M30.0582,50.1659,28.82,61.3753c-.0477.51-.81.99-1.3913.99a1.2679,1.2679,0,0,1-1.12-1.0926l1.2612-18.86"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M23.8757,51.3542s.6437-3.7629.7427-5.0008c.099-1.1387.1485-4.6046.1485-4.6046a2.4237,2.4237,0,0,1,2.4051-2.4756h7.2243"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M44.07,42.2877a5.9857,5.9857,0,0,0-.8914,3.224c0,1.5625,1.34,3.4821,1.34,4.5112.2993,2.9933.8156,11.17.8156,11.17A1.2565,1.2565,0,0,1,44.15,62.36a1.3687,1.3687,0,0,1-1.3345-1.1674L41.5682,50.07"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M36.6367,41.4589a2.3275,2.3275,0,0,1,2.5942-2.1645h4.6445a2.8911,2.8911,0,0,1,2.911,2.4944s-.15,3.4923-.05,4.64a46.0007,46.0007,0,0,0,1.0976,4.8891"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M34.2682,62.9868l.24-6.293"/>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M36.9646,56.6938l.2388,6.3645"/>
-                                                    <g>
+                                    <button style="width: 100%; height: 100%" type="submit" class="btn  bg-gradient-faded-success btn-circle btn-xl">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 text-gray-500">
+                                                <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+                                                    <g id="line">
+                                                        <line x1="60.0633" x2="60.0633" y1="61.4636" y2="20.1288"
+                                                              fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"/>
+                                                        <line x1="35.7945" x2="63.8" y1="9.2474" y2="28.0984" fill="none"
+                                                              stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                              stroke-width="2"/>
+                                                        <line x1="11.4616" x2="11.4616" y1="61.4636" y2="20.1288"
+                                                              fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"/>
+                                                        <polyline fill="none" stroke="#000" stroke-linecap="round"
+                                                                  stroke-linejoin="round" stroke-width="2"
+                                                                  points="17.329 61.464 17.329 32.857 35.737 20.438 35.788 20.438 54.196 32.857 54.196 61.464"/>
+                                                        <line x1="35.7304" x2="7.7249" y1="9.2474" y2="28.0984" fill="none"
+                                                              stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                              stroke-width="2"/>
                                                         <path fill="none" stroke="#000" stroke-linecap="round"
                                                               stroke-linejoin="round" stroke-width="2"
-                                                              d="M37.0315,49.5446h.3109a1.5021,1.5021,0,0,1,1.6685,1.6311l.4845,5.2043"/>
+                                                              d="M30.0582,50.1659,28.82,61.3753c-.0477.51-.81.99-1.3913.99a1.2679,1.2679,0,0,1-1.12-1.0926l1.2612-18.86"/>
                                                         <path fill="none" stroke="#000" stroke-linecap="round"
                                                               stroke-linejoin="round" stroke-width="2"
-                                                              d="M34.366,49.5446H34.13a1.5021,1.5021,0,0,0-1.6685,1.6311L31.9771,56.38"/>
+                                                              d="M23.8757,51.3542s.6437-3.7629.7427-5.0008c.099-1.1387.1485-4.6046.1485-4.6046a2.4237,2.4237,0,0,1,2.4051-2.4756h7.2243"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M44.07,42.2877a5.9857,5.9857,0,0,0-.8914,3.224c0,1.5625,1.34,3.4821,1.34,4.5112.2993,2.9933.8156,11.17.8156,11.17A1.2565,1.2565,0,0,1,44.15,62.36a1.3687,1.3687,0,0,1-1.3345-1.1674L41.5682,50.07"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M36.6367,41.4589a2.3275,2.3275,0,0,1,2.5942-2.1645h4.6445a2.8911,2.8911,0,0,1,2.911,2.4944s-.15,3.4923-.05,4.64a46.0007,46.0007,0,0,0,1.0976,4.8891"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M34.2682,62.9868l.24-6.293"/>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M36.9646,56.6938l.2388,6.3645"/>
+                                                        <g>
+                                                            <path fill="none" stroke="#000" stroke-linecap="round"
+                                                                  stroke-linejoin="round" stroke-width="2"
+                                                                  d="M37.0315,49.5446h.3109a1.5021,1.5021,0,0,1,1.6685,1.6311l.4845,5.2043"/>
+                                                            <path fill="none" stroke="#000" stroke-linecap="round"
+                                                                  stroke-linejoin="round" stroke-width="2"
+                                                                  d="M34.366,49.5446H34.13a1.5021,1.5021,0,0,0-1.6685,1.6311L31.9771,56.38"/>
+                                                        </g>
+                                                        <path fill="none" stroke="#000" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="M34.0081,47.1064a1.671,1.671,0,0,1-.3906-1.1731,2.0253,2.0253,0,1,1,3.6765,1.1731"/>
+                                                        <circle cx="31.2056" cy="33.8729" r="2.7168" fill="none"
+                                                                stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"/>
+                                                        <circle cx="40.7019" cy="33.8729" r="2.7168" fill="none"
+                                                                stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"/>
                                                     </g>
-                                                    <path fill="none" stroke="#000" stroke-linecap="round"
-                                                          stroke-linejoin="round" stroke-width="2"
-                                                          d="M34.0081,47.1064a1.671,1.671,0,0,1-.3906-1.1731,2.0253,2.0253,0,1,1,3.6765,1.1731"/>
-                                                    <circle cx="31.2056" cy="33.8729" r="2.7168" fill="none"
-                                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"/>
-                                                    <circle cx="40.7019" cy="33.8729" r="2.7168" fill="none"
-                                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"/>
-                                                </g>
-                                            </svg>
+                                                </svg>
+                                            </div>
+
+                                            <div class="ml-4 text-lg leading-7 font-semibold">
+                                                <a href="{{route('offer.create')}}"
+                                                   class="underline text-gray-900">{{__('Offer a save home')}}</a>
+                                            </div>
                                         </div>
 
-                                        <div class="ml-4 text-lg leading-7 font-semibold">
-                                            <a href="{{route('offer.create')}}"
-                                               class="underline text-gray-900">{{__('Offer a save home')}}</a>
+                                        <div class="mt-2 text-gray-600 text-sm">
+                                            {{__('Here you can offer a accommodation.')}}
                                         </div>
-                                    </div>
-
-                                    <div class="mt-2 text-gray-600 text-sm">
-                                        {{__('Here you can offer a accommodation.')}}
-                                    </div>
-                                </button>
+                                    </button>
                                 </form>
                             </div>
                             <div class="col-sm-12 col-md-6" style="margin: 0; padding: 2px;">
@@ -189,11 +189,11 @@
 
 
                         @if(false)
-                        <div class="mt-4 alert alert-danger" role="alert">
-                            {{__('Searching for support to improve this site as fast as possible.')}}
-                            {{__('Contact me at')}} <a href="mailto:develop@casa-connect.org">develop@casa-connect.org</a>
-                            Github: <a href="https://github.com/Philhil/casa-connect">https://github.com/Philhil/casa-connect</a>
-                        </div>
+                            <div class="mt-4 alert alert-danger" role="alert">
+                                {{__('Searching for support to improve this site as fast as possible.')}}
+                                {{__('Contact me at')}} <a href="mailto:develop@casa-connect.org">develop@casa-connect.org</a>
+                                Github: <a href="https://github.com/Philhil/casa-connect">https://github.com/Philhil/casa-connect</a>
+                            </div>
                         @endif
 
                         <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
@@ -218,28 +218,9 @@
             </div>
         </div>
         <div class="col-lg-2 col-sm-1"></div>
-
-        <div class="relative flex items-top justify-center sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}"
-                           class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-
-        </div>
     </div>
-
 </div>
+</main>
 
 
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
