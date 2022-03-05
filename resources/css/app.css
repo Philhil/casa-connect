@@ -2,12 +2,29 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.background-brandenburgertor {
+.background-welcomepage {
+
     position: absolute;
     z-index: -1;
     min-width: 100%;
     min-height: 100%;
     overflow: hidden;
+}
+:root {
+    --bg-desktop: none;
+    --bg-mobile: none;
+}
+
+@media screen and (max-width: 768px) {
+    .background-welcomepage {
+        background-image: var(--bg-mobile);
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .background-welcomepage {
+        background-image: var(--bg-desktop);
+    }
 }
 
 .body-welcome {

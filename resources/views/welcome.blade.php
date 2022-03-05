@@ -34,19 +34,21 @@
     <link id="pagestyle" href="{{ asset('assets/css/soft-ui-dashboard.css?v=1') }}" rel="stylesheet"/>
 </head>
 <body class="body-welcome">
-<img class="background-brandenburgertor" src={{asset('img/bg/Ukraine_solidarity_protest_Berlin_Pariser_Platz_with_lighted_Brandenburg_Gate_2022-02-24_29.jpg')}}>
+
+<img class="background-welcomepage">
+
 <div class="container-fluid py-4 pt-5">
     <div class="row">
 
         <div class="col-lg-2 col-sm-1"></div>
         <div class="col-lg-8 col-sm-10">
-            <div class="card bg-gray-150">
+            <div class="card bg-gray-150" style="opacity: 95%" >
                 <div class="card-body p-3">
 
                     <div class="max-w-6xl mx-auto sm:px-8 lg:px-10">
 
                         <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
-                            <h1><span class="flag-icon flag-icon-ua"></span> Welcome Ukraine</h1>
+                            <h1><span class="flag-icon flag-icon-ua"></span> {{__('Welcome Ukraine')}}</h1>
 
                         </div>
                         <div class="flex justify-center pt-1 sm:justify-start sm:pt-0">
@@ -241,5 +243,13 @@
 
 
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+<script>
+    (function () {
+        const div = document.querySelector('.background-welcomepage'),
+            html = document.documentElement; // A reference to <html> element
+        div.style.setProperty('--bg-desktop', `url({{ asset('img/bg/pexels-engin-akyurt-1451040.jpg') }})`);
+        div.style.setProperty('--bg-mobile', `url({{ asset('img/bg/pexels-engin-akyurt-1486844.jpg') }})`);
+    }());
+</script>
 </body>
 </html>
