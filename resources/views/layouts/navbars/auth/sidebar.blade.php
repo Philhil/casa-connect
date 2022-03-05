@@ -38,7 +38,18 @@
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
-
+            <!-- Auth Profile -->
+            <li class="nav-item">
+                <a class="nav-link {{ Route::currentRouteName() == 'profile' ? 'active' : '' }}"
+                    href="{{ route('profile') }}">
+                    <div
+                    class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-user" style="color: black"
+                    {{ in_array(request()->route()->getName(),['profile']) ? 'text-white' : 'text-dark' }}"></i>
+                </div>
+                    <span class="nav-link-text ms-1">{{ __('Profile')}}</span>
+                </a>
+            </li>
             <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Offer</h6>
             </li>
