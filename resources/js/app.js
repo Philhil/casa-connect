@@ -11,8 +11,6 @@ import $ from 'jquery'
 global.jQuery = require('jquery');
 window.$ = $;
 
-import { VueReCaptcha } from 'vue-recaptcha-v3'
-
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('offer-list', require('./components/offers/index.vue').default);
 Vue.component('myoffer-list', require('./components/offers/myoffers').default);

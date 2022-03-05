@@ -12,18 +12,15 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/app.scss', 'public/scss')
     .postCss('resources/css/app.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-])
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
     .vue({ version: 2 })
-    .copy('resources/css/default.css', 'public/css')
-    .copy(
-    'node_modules/@fortawesome/fontawesome-free/webfonts',
-    'public/webfonts'
-    )
     .copy('resources/img', 'public/img');
 
-mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets', 'public/assets');
+mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets/css', 'public/assets/css');
+mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets/fonts', 'public/assets/fonts');
+mix.copy('vendor/creativetimofficial/vue-soft-ui-dashboard/public/assets/js', 'public/assets/js');
