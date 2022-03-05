@@ -64,7 +64,7 @@
                             <h6 class="mb-0">Description and Languages</h6>
                         </div>
                         <div class="col-md-4 text-right">
-                            <a href="javascript:;">
+                            <a href="{{ url('/profile/edit/description') }}">
                                 <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip"
                                     data-bs-placement="top" title="Edit Description and Languages"></i>
                             </a>
@@ -84,4 +84,3 @@
     </div>
 </div>
 </div>
-
