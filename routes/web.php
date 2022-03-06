@@ -83,3 +83,13 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+//start ads
+Route::prefix('share')->group(function () {
+    Route::get('/instagram_story', function () {
+        return response()->file("img/socialmedia/instagram_story.png");
+    });
+
+    Route::get('/instagram_post', function () {
+        return response()->file("img/socialmedia/whatsapp_story.png");
+    });
+});
