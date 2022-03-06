@@ -131,16 +131,9 @@ export default {
       });
     },
     filterChanged(){
-      //TODO: restart infiniteHandler
-      console.log('sort value:' + this.sort);
-      console.log('filterCity value:' + this.filterCity);
-      console.log('filterAmount value:' + this.filterAmount);
-      console.log('filterAvailableTill value:' + this.filterAvailableTill);
-
       this.page = 1
       this.list = []
 
-      console.log('Page:' + this.page);
       // as said in the documentation
       // "The infinite loading component will
       // reset itself whenever the identifier property has changed"

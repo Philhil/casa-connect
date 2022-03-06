@@ -15,45 +15,19 @@
                             <h6 class="mb-0">{{ $offer->title }}</h6>
                         </div>
                         <div class="card-body ">
-
-                            @if (false)
-                                <div wire:model="showDemoNotification" class="mt-3  alert alert-primary alert-dismissible fade show"
-                                     role="alert">
-                        <span class="alert-text text-white">
-                            {{ __('You are in a demo version, you can\'t update the profile.') }}</span>
-                                    <button wire:click="$set('showDemoNotification', false)" type="button" class="btn-close"
-                                            data-bs-dismiss="alert" aria-label="Close">
-                                    </button>
-                                </div>
-                            @endif
-
-                            @if (false)
-                                <div wire:model="showSuccesNotification"
-                                     class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
-                                    <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
-                                    <span
-                                            class="alert-text text-white">{{ __('Your profile information have been successfuly saved!') }}</span>
-                                    <button wire:click="$set('showSuccesNotification', false)" type="button" class="btn-close"
-                                            data-bs-dismiss="alert" aria-label="Close">
-                                    </button>
-                                </div>
-                            @endif
-
                             <div class="container">
 
                                 <div class="row">
-                                    <div class="col">
-                                        <div class="row">
-                                            <span>{{__('Location:')}} {{$offer->postcode}}</span>
-                                        </div>
-                                        <div class="row mt-2">
+                                    <div class="col-xs-12 col-md-6 col-lg-4">
+                                        <span>{{__('Location:')}} {{$offer->postcode}}</span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-4">
                                             <b>{{ __('Description:') }}</b>
                                             <p>
                                                 {{$offer->description}}
                                             </p>
-                                        </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-xs-12 col-md-6 col-lg-4">
                                         <!-- image carousel -->
                                     </div>
                                 </div>

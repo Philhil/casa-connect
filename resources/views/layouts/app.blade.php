@@ -51,6 +51,7 @@
         @if (isset($slot))
             {{ $slot }}
         @endif
+        @yield('auth_views')
             <div class="container-fluid">
                 <div class="row">
                     @include('layouts.footers.guest.description')

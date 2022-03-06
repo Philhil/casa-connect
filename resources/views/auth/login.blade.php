@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+
+@section('auth_views')
 <section>
     <div class="page-header section-height-75">
         <div class="container">
@@ -78,6 +80,6 @@
         </div>
     </div>
 </section>
-
+@endsection('auth_views')
 
 
