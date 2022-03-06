@@ -40,8 +40,13 @@
             <div class="form-group">
                 <label for="country" class="form-control-label">{{ __('Country') }}</label>
                 <div class="@error('country') border border-danger rounded-3 @enderror">
-                    <input class="form-control" type="text" placeholder="{{__('Germany')}}" id="country" name="country"
-                           value="{{old("country")}}">
+                    <select class="form-control" id="country" name="country">
+
+                        @foreach($countries as $country)
+                            <option {{ (old("country") == $country['name'] || (old("country") == null && $country['name'] =="Germany") ? "selected":"") }} value="{{$country['name']}}">
+                                {{$country['name']}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 @error('country')
                 <div class="text-danger">{{ $message }}</div> @enderror
