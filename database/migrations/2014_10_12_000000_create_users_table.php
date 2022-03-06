@@ -22,9 +22,6 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('profile_photo_path')->nullable();
-            $table->string('languages')->nullable();
-            $table->string('description')->nullable();
         });
     }
 
