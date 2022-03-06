@@ -35,7 +35,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
+                    <span class="nav-link-text ms-1">{{ __('Dashboard') }}</span>
                 </a>
             </li>
             <!-- Auth Profile -->
@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="nav-item mt-2">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Offer</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">{{ __('Offer') }}</h6>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'offer.create' ? 'active' : '' }}"
@@ -59,7 +59,7 @@
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg id="emoji"  viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-                            <title>create-offer</title>
+                            <title>{{ __('Create offer') }}</title>
                             <g id="line">
                                 <line x1="60.0633" x2="60.0633" y1="61.4636" y2="20.1288" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                                 <line x1="35.7945" x2="63.8" y1="9.2474" y2="28.0984" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>

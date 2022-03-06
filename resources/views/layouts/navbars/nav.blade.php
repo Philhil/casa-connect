@@ -21,7 +21,7 @@
 
                         @auth
                             <li class="nav-item px-2 d-flex align-items-center">
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('Dashboard') }}</a>
                             </li>
 
                             <li class="nav-item px-2 d-flex align-items-center">
@@ -29,12 +29,12 @@
                             </li>
                         @else
                             <li class="nav-item px-2 d-flex align-items-center">
-                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('Log in') }}</a>
                             </li>
 
                             @if (Route::has('register'))
                                 <li class="nav-item px-2 d-flex align-items-center">
-                                <a href="{{ route('register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                                <a href="{{ route('register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @endauth

@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label for="description">{{ 'Description' }}</label>
+                <label for="description">{{ __('Description') }}</label>
                 <div class="@error('description')border border-danger rounded-3 @enderror">
                                     <textarea class="form-control" id="description" rows="3" name="description"
                                               placeholder="{{__('Introduce yourself')}}"
-                                              value="Introduce yourself">{{ Auth::user()->description }}</textarea>
+                                              value="{{ __('Introduce yourself') }}">{{ Auth::user()->description }}</textarea>
                 </div>
                 @error('description')
                 <div class="text-danger">{{ $message }}</div> @enderror

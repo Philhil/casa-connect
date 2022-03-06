@@ -8,12 +8,12 @@
                 <div class="card-header pb-0 p-3">
                     <div class="row">
                         <div class="col-md-8 d-flex align-items-center">
-                            <h6 class="mb-0">Profile Picture</h6>
+                            <h6 class="mb-0">{{ __('Profile Picture') }}</h6>
                         </div>
                         <div class="col-md-4 text-right">
                             <a href="javascript:;">
                                 <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Edit Profile Picture"></i>
+                                    data-bs-placement="top" title="{{ __('Edit Profile Picture') }}"></i>
                             </a>
                         </div>
                     </div>
@@ -33,12 +33,12 @@
                 <div class="card-header pb-0 p-3">
                     <div class="row">
                         <div class="col-md-8 d-flex align-items-center">
-                            <h6 class="mb-0">Profile Settings</h6>
+                            <h6 class="mb-0">{{ __('Profile Settings') }}</h6>
                         </div>
                         <div class="col-md-4 text-right">
                             <a href="javascript:;">
                                 <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Edit Profile Settings"></i>
+                                    data-bs-placement="top" title="{{ __('Edit Profile Settings') }}"></i>
                             </a>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                 <div class="card-body p-3">
                     <ul class="list-group">
                         <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                Name:</strong> &nbsp; {{ Auth::user()->name }}</li>
+                            {{ __('Name') }}:</strong> &nbsp; {{ Auth::user()->name }}</li>
                         <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                First Name:</strong> &nbsp; {{ Auth::user()->first_name }}</li>
+                            {{ __('First Name') }}:</strong> &nbsp; {{ Auth::user()->first_name }}</li>
                         <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                Email:</strong> &nbsp; {{ Auth::user()->email }}</li>
+                            {{ __('Email') }}:</strong> &nbsp; {{ Auth::user()->email }}</li>
                     </ul>
                 </div>
             </div>
@@ -61,12 +61,12 @@
                 <div class="card-header pb-0 p-3">
                     <div class="row">
                         <div class="col-md-8 d-flex align-items-center">
-                            <h6 class="mb-0">Description and Languages</h6>
+                            <h6 class="mb-0">{{ __('Description and Languages') }}</h6>
                         </div>
                         <div class="col-md-4 text-right">
                             <a href="{{ url('/profile/edit/description') }}">
                                 <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Edit Description and Languages"></i>
+                                    data-bs-placement="top" title="{{ __('Edit Description and Languages') }}"></i>
                             </a>
                         </div>
                     </div>
@@ -74,9 +74,9 @@
                 <div class="card-body p-3">
                     <ul class="list-group">
                         <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                Description:</strong> &nbsp; {{ Auth::user()->description }}</li>
+                            {{ __('Description') }}:</strong> &nbsp; {{ Auth::user()->description }}</li>
                         <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                Languages:</strong> &nbsp; {{ Auth::user()->languages }}</li>
+                            {{ __('Languages') }}:</strong> &nbsp; {{ Auth::user()->languages }}</li>
                     </ul>
                 </div>
             </div>
