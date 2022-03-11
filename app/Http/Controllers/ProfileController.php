@@ -27,4 +27,22 @@ class ProfileController extends Controller
         return redirect(route('profile'));
     }
 
+    public function uploadProfileimage(Request $request)
+    {
+        if($request->hasFile('image')){
+
+            $validatedData = $request->validate([
+                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            ]);
+
+            $filePath = 'images/' . Auth::id();
+
+            $path = $request->file('image')->store($filePath, 's3');
+
+            $user = User::findOrFail(Auth::id());
+            $user->profile_photo_path = $path;
+            $user->save();
+        }
+        return redirect()->back();
+    }
 }

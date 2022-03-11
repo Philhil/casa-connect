@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('profile_photo_path')->nullable();
-            $table->string('languages')->nullable();
+            $table->json('languages')->nullable();
             $table->string('description')->nullable();
         });
     }
