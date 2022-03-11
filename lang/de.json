@@ -64,5 +64,21 @@
     "First Name": "Vorname",
     "Sign up": "Registrierung",
     "Already have an account? ": "Hast du schon ein Profil? ",
-    "Sign in": "Anmeldung"
-}
+    "Sign in": "Anmeldung",
+    "Sign Out": "Abmeldung",
+    "Dashboard": "Übersicht",
+    "Profile": "Profil",
+    "Offer": "Angebot",
+    "Profile Picture": "Profilbild",
+    "Edit Profile Picture":  "Profilbild ändern",
+    "Profile Settings": "Profileinstellungen",
+    "Edit Profile Settings":  "Profileinstellungen ändern",
+    "Description and Languages": "Profilbeschreibung und Sprachen",
+    "Edit Description and Languages": "Profilbeschreibung und Sprachen ändern",
+    "Description": "Profilbeschreibung",
+    "Languages": "Sprachen",
+    "Introduce yourself": "Stelle dich vor",
+    "Cancel": "Abbrechen",
+    "Save": "Speichern",
+    "Edit": "Bearbeitung"
+ }
