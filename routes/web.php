@@ -65,7 +65,11 @@ Route::post('/offer/contact', [\App\Http\Controllers\OfferController::class, 'co
 
 Route::middleware('auth')->group(function () {
 
+    //Profile routes
     Route::get('/profile', Profile::class)->name('profile');
+    //Route::get('/profile/edit/picture',  [\App\Http\Controllers\ProfileController::class, 'editinformation'])->name('profile.information');
+    Route::post('/profile/edit', [\App\Http\Controllers\ProfileController::class, 'storedescription'])->name('profile.storedescription');
+    Route::get('/profile/edit/description',\App\Http\Livewire\ProfileEditDescription::class)->name('Profile.edit.description');
 
     //offer
     Route::get('/offercreate', \App\Http\Livewire\OfferCreate::class)->name('offer.create');

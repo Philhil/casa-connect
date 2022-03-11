@@ -71,8 +71,8 @@
         <label for="description">{{ 'Description' }}</label>
         <div class="@error('description')border border-danger rounded-3 @enderror">
                             <textarea class="form-control" id="description" rows="3" name="description"
-                                      placeholder="{{__('Discrype your offer in detail')}}"
-                            >{{old("description")}}</textarea>
+                                      placeholder="{{__('Describe your offer in detail')}}"
+                                      value="{{old("description")}}"></textarea>
         </div>
         @error('description')
         <div class="text-danger">{{ $message }}</div> @enderror
