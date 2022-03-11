@@ -32,6 +32,7 @@
         "laravel/vapor-cli": "^1.36",
         "laravel/vapor-core": "^2.21",
         "laravel/vapor-ui": "^1.5",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "livewire/livewire": "^2.4",
         "symfony/http-client": "^6.0",
         "symfony/http-kernel": "6.0"

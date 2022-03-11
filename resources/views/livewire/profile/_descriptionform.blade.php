@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn bg-gradient-dark btn-md mt-4 mb-4" onclick="window.location='{{ url("profile") }}'">{{ __('Cancel') }}</button>
+        <button type="button" class="btn bg-gradient-dark btn-md mt-4 mb-4" onclick="window.location='{{ route("profile.edit.description") }}'">{{ __('Cancel') }}</button>
         <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ __('Save') }}</button>
     </div>
 </form>

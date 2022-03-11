@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fef37e21ea9e4f419409dba2cb63c97a",
+    "content-hash": "cc9be33c1ad9e828e4fba926eb36e47e",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -2138,16 +2138,16 @@
         },
         {
             "name": "league/flysystem-aws-s3-v3",
-            "version": "3.0.10",
+            "version": "3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
-                "reference": "79c63dc761b6a389a38bd409c2bf8ced73c29261"
+                "reference": "6f78e668ee70c69dd43830ebb21b41ec11f648fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/79c63dc761b6a389a38bd409c2bf8ced73c29261",
-                "reference": "79c63dc761b6a389a38bd409c2bf8ced73c29261",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/6f78e668ee70c69dd43830ebb21b41ec11f648fc",
+                "reference": "6f78e668ee70c69dd43830ebb21b41ec11f648fc",
                 "shasum": ""
             },
             "require": {
@@ -2188,9 +2188,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem-aws-s3-v3/issues",
-                "source": "https://github.com/thephpleague/flysystem-aws-s3-v3/tree/3.0.10"
+                "source": "https://github.com/thephpleague/flysystem-aws-s3-v3/tree/3.0.11"
             },
-            "time": "2022-02-26T10:59:05+00:00"
+            "time": "2022-03-04T16:39:25+00:00"
         },
         {
             "name": "league/mime-type-detection",
